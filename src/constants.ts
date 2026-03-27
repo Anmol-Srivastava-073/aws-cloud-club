@@ -15,18 +15,4 @@ export const EVENTS: Event[] = [
       image: 'src/images/shubhamlondhe.jpeg',
     },
   },
-  {
-    id: '2',
-    title: 'Serverless Architecture Talk',
-    date: 'May 5, 2026',
-    time: '2:00 PM - 4:00 PM',
-    venue: 'Seminar Hall B',
-    shortDescription: 'Explore the power of serverless computing with AWS Lambda and API Gateway.',
-    fullDescription: 'Join us for an insightful talk on how serverless architecture is changing the way we build and scale applications. Learn about cost optimization and event-driven designs.',
-    speaker: {
-      name: 'Jane Smith',
-      designation: 'Senior Cloud Engineer at TechCorp',
-      image: 'https://picsum.photos/seed/jane/300/300',
-    },
-  },
 ];
