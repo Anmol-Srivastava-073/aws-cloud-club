@@ -6,10 +6,10 @@ import { motion, AnimatePresence } from 'motion/react';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // ✅ Only relevant links now
+  // ✅ FIXED: Event now includes id
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Event', path: '/event' },
+    { name: 'Event', path: '/event?id=event1' }, // 🔥 important fix
   ];
 
   return (
