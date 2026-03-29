@@ -28,7 +28,7 @@ export default function Footer() {
               </div>
 
               <span className="text-xl font-bold tracking-tight">
-                AWS <span className="text-indigo-400">Cloud Club</span>
+                AWS <span className="text-indigo-400">Cloud Club MUJ</span>
               </span>
             </Link>
 
