@@ -42,22 +42,22 @@ export const EVENTS: Event[] = [
         name: 'Mr. Pawan Sharma',
         designation: 'AWS Community Builder',
         image: '/images/pawansharma.jpeg',
-        bio: 'Delivered an insightful session on AWS fundamentals...',
+        bio: 'Delivered an insightful session on AWS fundamentals.',
       },
       {
         name: 'Mr. Somil Jain',
         designation: 'Cloud Engineer at Celebal Technologies',
         image: '/images/somiljain.jpeg',
-        bio: 'Shared practical industry experiences...',
+        bio: 'Shared practical industry experiences.',
       },
     ],
 
     recap: {
       title: 'Launch Event Recap',
       paragraphs: [
-        'We are excited to share that the AWS Cloud Club MUJ...',
-        'A special thank you to our esteemed speaker...',
-        'We would also like to extend our sincere gratitude...',
+        'We are excited to share that the AWS Cloud Club MUJ has been officially launched at Manipal University Jaipur.',
+        'A special thank you to our esteemed speakers, Mr. Pawan Sharma and Mr. Somil Jain, for sharing their valuable insights and experiences.',
+        'We would also like to extend our sincere gratitude to our Faculty Coordinator, Ms. Vaishali Chauhan, for helping the club function so seamlessly',
       ],
       photos: [
         '/images/aws-launch-event.jpeg',
