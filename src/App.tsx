@@ -9,10 +9,6 @@ import Footer from './components/Footer';
 import LandingPage from './pages/LandingPage';
 import EventDetailsPage from './pages/EventDetailsPage';
 
-import MeetupPage from './pages/MeetupPage';
-import ClassesPage from './pages/ClassesPage';
-import AttendancePage from './pages/AttendancePage';
-
 export default function App() {
   return (
     <Router>
