@@ -7,8 +7,8 @@ export const EVENTS: Event[] = [
     date: 'April 1, 2026',
     time: '10:30 AM - 12:30 PM',
     venue: 'LHC 103 AB4',
-    shortDescription: 'Learn the fundamentals of AWS and how to deploy your first application.',
-    fullDescription: 'This workshop is designed for beginners who want to dive into the world of Cloud Computing. We will cover EC2, S3, and Lambda basics, followed by a hands-on session where you will deploy a static website on AWS.',
+    shortDescription: 'A hands-on AWS Cloud Club workshop where participants build a backend application using Python and Flask while understanding real-world development workflows.',
+    fullDescription: 'The “Localhost to Cloud Host: Build & Deploy” workshop is a hands-on session organized by the AWS Cloud Club at Manipal University Jaipur. The workshop aims to provide participants with a practical understanding of how backend applications are developed and structured using modern technologies. During the session, participants will build a backend application using Python and Flask, gaining insight into how applications are designed, managed, and prepared for deployment. The focus is on understanding the development workflow and the key components involved in taking an application beyond the local environment. This workshop is conducted in a hybrid mode, allowing participants to join both offline and online, ensuring accessibility to a wider audience. The session will be led by Shubham Londhe, who will guide participants through the process with a focus on clarity and practical learning.',
 
     // 🔥 ADD THIS
     meetupLink: 'https://www.meetup.com/aws-cloud-club-at-manipal-university-jaipur/events/313966432/',
