@@ -20,8 +20,8 @@ export default function App() {
             {/* Home */}
             <Route path="/" element={<LandingPage />} />
 
-            {/* Event page (ALL sections inside this) */}
-            <Route path="/event" element={<EventDetailsPage />} />
+            {/* ✅ FIXED: Dynamic Event Route */}
+            <Route path="/event/:id" element={<EventDetailsPage />} />
           </Routes>
         </main>
 
