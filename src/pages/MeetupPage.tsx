@@ -8,7 +8,7 @@ export default function MeetupPage() {
       </p>
 
       <a
-        href="https://www.meetup.com/" // 🔁 replace with your real event link
+        href="https://www.meetup.com/aws-cloud-club-at-manipal-university-jaipur/events/313966432/?utm_medium=referral&utm_campaign=announce_event&utm_source=link&utm_version=v2&member_id=476898089" // 🔁 replace with your real event link
         target="_blank"
         rel="noopener noreferrer"
         className="aws-button-primary px-6 py-3"
