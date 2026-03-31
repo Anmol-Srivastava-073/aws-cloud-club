@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { Cloud, ArrowRight, Code, Users, Zap } from 'lucide-react';
 import EventCard from '../components/EventCard';
 import { EVENTS } from '../constants';
+import CloudVisual from '../components/CloudVisual';
 
 export default function LandingPage() {
 
@@ -98,10 +99,7 @@ export default function LandingPage() {
 
           {/* RIGHT */}
           <div>
-            <img
-              src="/images/cloud computing photo landing page.jpg"
-              className="rounded-md border border-white/10 w-full object-cover"
-            />
+            <CloudVisual />
           </div>
 
         </div>
