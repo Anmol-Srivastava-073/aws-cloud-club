@@ -17,35 +17,25 @@ export default function LandingPage() {
       <section className="aws-section border-b border-white/10">
         <div className="max-w-5xl mx-auto px-4 text-center">
 
-          {/* Tag */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#161b22] border border-white/10 text-xs text-gray-400 mb-6">
             <Cloud className="w-3.5 h-3.5 text-aws-orange/90" />
             AWS Cloud Club MUJ
           </div>
 
-          {/* Heading */}
           <h1 className="text-3xl md:text-5xl font-medium mb-5 tracking-tight leading-tight">
             Build on <span className="text-aws-orange">AWS Cloud</span> with <span className="text-aws-orange">MUJ</span>
           </h1>
 
-          {/* Subtext */}
           <p className="text-gray-400 text-sm md:text-base max-w-lg mx-auto mb-8 leading-relaxed">
             A student-led community at <span className="text-aws-orange">Manipal University Jaipur</span> focused on learning, building, and growing with cloud technologies. We bring together curious minds to explore AWS, work on real-world projects, and develop skills that prepare us for the future.
           </p>
 
-          {/* Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-3">
-            <a
-              href="#events"
-              className="aws-button-primary flex items-center gap-2 justify-center"
-            >
+            <a href="#events" className="aws-button-primary flex items-center gap-2 justify-center">
               Explore Events <ArrowRight className="w-4 h-4" />
             </a>
 
-            <a
-              href="#about"
-              className="aws-button-secondary"
-            >
+            <a href="#about" className="aws-button-secondary">
               Learn More
             </a>
           </div>
@@ -60,21 +50,25 @@ export default function LandingPage() {
           {/* LEFT */}
           <div>
             <h2 className="text-2xl md:text-3xl font-medium mb-5 tracking-tight">
-              What is <span className="text-aws-orange">AWS Cloud Club MUJ</span> all about?
+              About <span className="text-aws-orange">AWS Cloud Club MUJ</span>
             </h2>
 
-            <p className="text-gray-400 text-sm md:text-base mb-8 leading-relaxed">
-              AWS Cloud Club MUJ is a student-led community where we learn, build, and grow together using cloud technologies. We organize hands-on workshops, real-world projects, and interactive sessions focused on AWS, helping students gain practical experience and develop industry-relevant skills.
+            <p className="text-gray-400 text-sm md:text-base mb-6 leading-relaxed">
+              AWS Cloud Club MUJ is a student-led community where we explore cloud computing through hands-on learning and real-world building. Our goal is to create an environment where students don’t just learn concepts, but actually apply them.
             </p>
 
-            {/* Features */}
+            <p className="text-gray-400 text-sm md:text-base mb-8 leading-relaxed">
+              Through workshops, speaker sessions, and collaborative projects, members gain exposure to AWS technologies, industry practices, and career pathways in cloud computing.
+            </p>
+
+            {/* FEATURES */}
             <div className="space-y-5">
 
               <div className="flex gap-3 items-start">
                 <Code className="text-aws-orange w-4 h-4 mt-1" />
                 <div>
                   <h4 className="font-medium text-sm">Hands-on Learning</h4>
-                  <p className="text-xs text-gray-500">Build real-world projects</p>
+                  <p className="text-xs text-gray-500">Work on real-world cloud projects</p>
                 </div>
               </div>
 
@@ -82,15 +76,15 @@ export default function LandingPage() {
                 <Users className="text-aws-orange w-4 h-4 mt-1" />
                 <div>
                   <h4 className="font-medium text-sm">Community</h4>
-                  <p className="text-xs text-gray-500">Collaborate with peers</p>
+                  <p className="text-xs text-gray-500">Collaborate and grow together</p>
                 </div>
               </div>
 
               <div className="flex gap-3 items-start">
                 <Zap className="text-aws-orange w-4 h-4 mt-1" />
                 <div>
-                  <h4 className="font-medium text-sm">Certification</h4>
-                  <p className="text-xs text-gray-500">Guidance for AWS certifications</p>
+                  <h4 className="font-medium text-sm">Career Growth</h4>
+                  <p className="text-xs text-gray-500">Guidance for AWS and industry roles</p>
                 </div>
               </div>
 
@@ -98,8 +92,28 @@ export default function LandingPage() {
           </div>
 
           {/* RIGHT */}
-          <div>
+          <div className="space-y-5">
+
+            {/* 🔥 CLOUD VISUAL */}
             <CloudVisual />
+
+            {/* 🔥 REAL IMAGES */}
+            <div className="grid grid-cols-2 gap-4">
+
+              <img
+                src="/images/about1.jpeg"
+                alt="AWS Cloud Club Team"
+                className="rounded-md border border-white/10 object-cover h-40 w-full hover:scale-[1.02] transition"
+              />
+
+              <img
+                src="/images/about2.jpeg"
+                alt="AWS Cloud Club Community"
+                className="rounded-md border border-white/10 object-cover h-40 w-full mt-4 hover:scale-[1.02] transition"
+              />
+
+            </div>
+
           </div>
 
         </div>
@@ -109,7 +123,6 @@ export default function LandingPage() {
       <section id="events" className="aws-section">
         <div className="max-w-6xl mx-auto px-4">
 
-          {/* Header */}
           <div className="mb-10">
             <h2 className="text-2xl md:text-3xl font-medium mb-2 tracking-tight">
               Events
@@ -120,7 +133,6 @@ export default function LandingPage() {
             </p>
           </div>
 
-          {/* Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {sortedEvents.map((event, index) => (
               <EventCard key={event.id} event={event} index={index} />
