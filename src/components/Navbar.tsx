@@ -14,24 +14,36 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0b0f14]/95 backdrop-blur border-b border-white/10">
 
       <div className="max-w-5xl mx-auto px-4">
-        <div className="flex items-center justify-between h-14">
+        <div className="flex items-center justify-between h-14 relative">
 
-          {/* Logo */}
+          {/* LEFT - AWS Logo */}
           <Link
             to="/"
             onClick={handleHomeClick}
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-2"
           >
             <Cloud className="w-4.5 h-4.5 text-[#FF9900]/90" />
-
             <span className="text-sm font-medium tracking-tight">
               AWS <span className="text-[#FF9900]">Cloud Club MUJ</span>
             </span>
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-5 text-xs">
+          {/* CENTER - Hamburger (mobile only) */}
+          <div className="absolute left-1/2 -translate-x-1/2 md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-1.5 rounded border border-transparent hover:border-white/10 text-gray-400 hover:text-white transition"
+            >
+              {isOpen ? (
+                <X className="w-4.5 h-4.5" />
+              ) : (
+                <Menu className="w-4.5 h-4.5" />
+              )}
+            </button>
+          </div>
 
+          {/* DESKTOP NAV */}
+          <div className="hidden md:flex items-center gap-5 text-xs">
             <Link
               to="/"
               onClick={handleHomeClick}
@@ -46,21 +58,21 @@ export default function Navbar() {
             >
               Events
             </a>
-
           </div>
 
-          {/* Mobile Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-1.5 rounded border border-transparent hover:border-white/10 text-gray-400 hover:text-white transition"
-          >
-            {isOpen ? <X className="w-4.5 h-4.5" /> : <Menu className="w-4.5 h-4.5" />}
-          </button>
+          {/* RIGHT - MUJ LOGO */}
+          <div className="flex items-center">
+            <img
+              src="/images/manipallogo.png" // 🔥 place image in public/images
+              alt="MUJ Logo"
+              className="h-7 w-auto opacity-80 hover:opacity-100 transition"
+            />
+          </div>
 
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* MOBILE MENU */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
