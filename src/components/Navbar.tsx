@@ -63,7 +63,7 @@ export default function Navbar() {
           {/* RIGHT - MUJ LOGO */}
           <div className="flex items-center">
             <img
-              src="/images/manipallogo.png" // 🔥 place image in public/images
+              src="/images/mujpnglogo.png" // 🔥 place image in public/images
               alt="MUJ Logo"
               className="h-7 w-auto opacity-80 hover:opacity-100 transition"
             />
