@@ -1,160 +1,114 @@
 import { motion } from "motion/react";
 
-const layers = [
-  {
-    radius: 120, // 🔥 bigger
-    speed: 24,
-    icons: [
-      "/aws/ec2.svg",
-      "/aws/s3.svg",
-      "/aws/lambda.svg",
-      "/aws/rds.svg",
-    ],
-  },
-  {
-    radius: 190, // 🔥 bigger outer ring
-    speed: 34,
-    icons: [
-      "/aws/dynamodb.svg",
-      "/aws/apigateway.svg",
-      "/aws/cloudfront.svg",
-      "/aws/vpc.svg",
-      "/aws/sqs.svg",
-      "/aws/sns.svg",
-    ],
-  },
+const icons = [
+  "/aws/ec2.svg",
+  "/aws/lambda.svg",
+  "/aws/s3.svg",
+  "/aws/rds.svg",
+  "/aws/dynamodb.svg",
+  "/aws/apigateway.svg",
+  "/aws/cloudfront.svg",
 ];
 
 export default function CloudVisual() {
   return (
-    <div className="relative w-full h-[520px] rounded-xl bg-[#111827] border border-white/10 flex items-center justify-center overflow-hidden">
+    <div className="relative w-full h-[420px] rounded-xl bg-[#0b0f14] border border-white/10 overflow-hidden">
 
-      {/* 🔥 RADIAL WEB */}
-      <svg className="absolute w-full h-full">
+      {/* 🌫 BACKGROUND GRADIENT GLOW */}
+      <div className="absolute inset-0">
+        <div className="absolute w-80 h-80 bg-[#FF9900]/10 blur-[120px] rounded-full top-1/3 left-1/4" />
+        <div className="absolute w-80 h-80 bg-blue-500/10 blur-[120px] rounded-full bottom-1/3 right-1/4" />
+      </div>
 
-        {/* rings */}
-        <circle cx="50%" cy="50%" r="110" stroke="rgba(255,255,255,0.08)" fill="none" />
-        <circle cx="50%" cy="50%" r="180" stroke="rgba(255,255,255,0.06)" fill="none" />
+      {/* 🌌 FLOATING PARTICLES */}
+      {[...Array(20)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-1 h-1 bg-white/20 rounded-full"
+          initial={{
+            x: Math.random() * 400,
+            y: Math.random() * 400,
+          }}
+          animate={{
+            y: ["0%", "100%"],
+            opacity: [0, 1, 0],
+          }}
+          transition={{
+            duration: 6 + Math.random() * 4,
+            repeat: Infinity,
+            delay: Math.random() * 5,
+          }}
+        />
+      ))}
 
-        {/* radial lines */}
-        {[...Array(16)].map((_, i) => {
-          const angle = (i / 16) * 2 * Math.PI;
-          const x = 50 + 50 * Math.cos(angle);
-          const y = 50 + 50 * Math.sin(angle);
-
-          return (
-            <line
-              key={i}
-              x1="50%"
-              y1="50%"
-              x2={`${x}%`}
-              y2={`${y}%`}
-              stroke="rgba(255,255,255,0.06)"
-              strokeWidth="1"
-            />
-          );
-        })}
-
-        {/* subtle cross mesh */}
-        {[...Array(8)].map((_, i) => {
-          const angle = (i / 8) * 2 * Math.PI;
-          const x1 = 50 + 50 * Math.cos(angle);
-          const y1 = 50 + 50 * Math.sin(angle);
-
-          const x2 = 50 + 50 * Math.cos(angle + Math.PI);
-          const y2 = 50 + 50 * Math.sin(angle + Math.PI);
-
-          return (
-            <line
-              key={`cross-${i}`}
-              x1={`${x1}%`}
-              y1={`${y1}%`}
-              x2={`${x2}%`}
-              y2={`${y2}%`}
-              stroke="rgba(255,153,0,0.05)" // 🔥 AWS tint
-              strokeWidth="1"
-            />
-          );
-        })}
-      </svg>
-
-      {/* 🔥 CENTER */}
+      {/* ☁️ CENTER CLOUD */}
       <motion.img
         src="/aws/aws.svg"
-        className="absolute w-16 z-10"
-        animate={{ scale: [1, 1.08, 1] }}
-        transition={{ duration: 4, repeat: Infinity }}
+        className="absolute w-16 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+        animate={{
+          scale: [1, 1.05, 1],
+          rotate: [0, 2, -2, 0],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+        }}
         style={{
-          filter: "drop-shadow(0 0 14px rgba(255,153,0,0.5))",
+          filter: "drop-shadow(0 0 20px rgba(255,153,0,0.4))",
         }}
       />
 
-      {/* 🔁 ORBIT LAYERS */}
-      {layers.map((layer, layerIndex) => (
-        <motion.div
-          key={layerIndex}
-          className="absolute"
-          animate={{ rotate: 360 }}
+      {/* 🔁 FLOATING AWS SERVICES */}
+      {icons.map((icon, i) => (
+        <motion.img
+          key={i}
+          src={icon}
+          className="absolute w-8 opacity-90"
+          initial={{
+            x: `${20 + Math.random() * 60}%`,
+            y: `${20 + Math.random() * 60}%`,
+          }}
+          animate={{
+            x: [
+              `${20 + Math.random() * 60}%`,
+              `${20 + Math.random() * 60}%`,
+            ],
+            y: [
+              `${20 + Math.random() * 60}%`,
+              `${20 + Math.random() * 60}%`,
+            ],
+          }}
           transition={{
-            duration: layer.speed,
+            duration: 12 + i * 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          style={{
+            filter: "drop-shadow(0 0 10px rgba(255,153,0,0.25))",
+          }}
+        />
+      ))}
+
+      {/* ⚡ LIGHT FLOW LINES */}
+      {[...Array(6)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute h-[1px] bg-gradient-to-r from-transparent via-[#FF9900]/40 to-transparent"
+          style={{
+            top: `${20 + i * 10}%`,
+            left: "-20%",
+            width: "140%",
+          }}
+          animate={{
+            x: ["0%", "100%"],
+          }}
+          transition={{
+            duration: 6 + i,
             repeat: Infinity,
             ease: "linear",
           }}
-          style={{
-            width: layer.radius * 2,
-            height: layer.radius * 2,
-          }}
-        >
-          {layer.icons.map((icon, i) => {
-            const angle = (i / layer.icons.length) * 2 * Math.PI;
-
-            const x = layer.radius + layer.radius * Math.cos(angle);
-            const y = layer.radius + layer.radius * Math.sin(angle);
-
-            return (
-              <motion.div
-                key={i}
-                className="absolute"
-                style={{
-                  left: x,
-                  top: y,
-                  transform: "translate(-50%, -50%)",
-                }}
-                animate={{
-                  y: [0, -6, 0],
-                  scale: [1, 1.05, 1],
-                }}
-                transition={{
-                  duration: 3 + i * 0.3,
-                  repeat: Infinity,
-                }}
-              >
-                <img
-                  src={icon}
-                  className="w-8"
-                  style={{
-                    filter: "drop-shadow(0 0 8px rgba(255,153,0,0.25))",
-                  }}
-                />
-              </motion.div>
-            );
-          })}
-        </motion.div>
+        />
       ))}
-
-      {/* 🔥 GLOW */}
-      <motion.div
-        className="absolute w-80 h-80 rounded-full"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(255,153,0,0.12), transparent 70%)",
-        }}
-        animate={{
-          scale: [1, 1.25, 1],
-          opacity: [0.4, 0.2, 0.4],
-        }}
-        transition={{ duration: 5, repeat: Infinity }}
-      />
     </div>
   );
 }
