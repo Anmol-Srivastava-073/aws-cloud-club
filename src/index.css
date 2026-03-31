@@ -3,21 +3,21 @@
 /* 🔤 AWS EMBER FONT */
 @font-face {
   font-family: "AWS Ember";
-  src: url("/fonts/AWSEmber-Light.woff2") format("woff2");
+  src: url("/fonts/Amazon Ember Light.tff") format("tff");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "AWS Ember";
-  src: url("/fonts/AWSEmber-Regular.woff2") format("woff2");
+  src: url("/fonts/Amazon Ember.tff") format("tff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "AWS Ember";
-  src: url("/fonts/AWSEmber-Bold.woff2") format("woff2");
+  src: url("/fonts/Amazon Ember Bold.tff") format("tff");
   font-weight: 600;
   font-style: normal;
 }
