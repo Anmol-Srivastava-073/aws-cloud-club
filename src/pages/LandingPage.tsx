@@ -29,7 +29,7 @@ export default function LandingPage() {
 
           {/* Subtext */}
           <p className="text-gray-400 text-sm md:text-base max-w-lg mx-auto mb-8 leading-relaxed">
-            A student-led community at Manipal University Jaipur focused on learning, building, and growing with cloud technologies. We bring together curious minds to explore AWS, work on real-world projects, and develop skills that prepare us for the future.
+            A student-led community at <span className="text-aws-orange">Manipal University Jaipur</span> focused on learning, building, and growing with cloud technologies. We bring together curious minds to explore AWS, work on real-world projects, and develop skills that prepare us for the future.
           </p>
 
           {/* Buttons */}
