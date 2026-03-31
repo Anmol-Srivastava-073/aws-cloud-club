@@ -18,61 +18,60 @@ export default function EventCard({ event, index }: { event: Event; index: numbe
   const expired = isEventExpired(event.date);
 
   return (
-    <Link to={`/event/${event.id}`} className="block h-full">
+    <Link to={`/event/${event.id}`} className="block h-full group">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
-        whileHover={{ y: -3 }}
+        whileHover={{ y: -2 }}
         viewport={{ once: true }}
-        transition={{ delay: index * 0.08 }}
+        transition={{ delay: index * 0.06 }}
         className="h-full"
       >
 
-        {/* AWS STYLE CARD */}
-        <div className={`bg-[#161b22] border border-white/10 rounded-md p-6 flex flex-col h-full min-h-[260px] transition-all duration-200
+        <div className={`bg-[#161b22] border border-white/10 rounded-md p-5 flex flex-col h-full min-h-[250px] transition-all duration-200
           ${!expired && 'hover:border-white/20'}
         `}>
 
           {/* Past Badge */}
           {expired && (
-            <span className="text-xs px-2 py-1 rounded bg-red-500/10 text-red-400 mb-3 w-fit">
+            <span className="text-[10px] px-2 py-1 rounded bg-red-500/10 text-red-400 mb-3 w-fit">
               Past Event
             </span>
           )}
 
           {/* Date */}
-          <div className="flex items-center gap-2 text-gray-400 mb-3 text-sm">
-            <Calendar className="w-4 h-4 text-[#FF9900]" />
+          <div className="flex items-center gap-2 text-gray-500 mb-2 text-xs">
+            <Calendar className="w-3.5 h-3.5 text-[#FF9900]/90" />
             {event.date}
           </div>
 
           {/* Title */}
-          <h3 className="text-lg font-medium mb-3 text-white">
+          <h3 className="text-base font-medium mb-2 text-white leading-snug">
             {event.title}
           </h3>
 
           {/* Description */}
-          <p className="text-gray-400 text-sm mb-5 line-clamp-2">
+          <p className="text-gray-400 text-xs mb-4 line-clamp-2 leading-relaxed">
             {event.shortDescription}
           </p>
 
           {/* Meta */}
-          <div className="flex flex-col gap-2 text-xs text-gray-500 mb-6">
+          <div className="flex flex-col gap-1.5 text-[11px] text-gray-500 mb-5">
             <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-[#FF9900]" />
+              <MapPin className="w-3.5 h-3.5 text-[#FF9900]/80" />
               {event.venue}
             </div>
 
             <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4 text-[#FF9900]" />
+              <Clock className="w-3.5 h-3.5 text-[#FF9900]/80" />
               {event.time}
             </div>
           </div>
 
           {/* CTA */}
-          <div className="mt-auto flex items-center gap-2 text-[#FF9900] text-sm font-medium">
+          <div className="mt-auto flex items-center gap-1.5 text-[#FF9900] text-xs font-medium">
             View Details
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
           </div>
 
         </div>
