@@ -3,87 +3,66 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="relative pt-20 pb-10 border-t border-white/10 bg-transparent backdrop-blur-xl">
+    <footer className="border-t border-white/10 bg-[#0b0f14] pt-16 pb-8">
 
-      {/* Glow Background */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute left-1/4 bottom-0 w-[300px] h-[300px] bg-indigo-500/20 blur-[120px] rounded-full" />
-        <div className="absolute right-1/4 bottom-0 w-[300px] h-[300px] bg-purple-500/20 blur-[120px] rounded-full" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4">
 
         {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-3 gap-10 mb-10">
 
           {/* Logo + About */}
-          <div className="col-span-1 md:col-span-2">
-            <Link to="/" className="flex items-center space-x-3 mb-6 group">
-
-              {/* Gradient Logo */}
-              <div className="p-[2px] rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-blue-500">
-                <div className="p-2 rounded-xl bg-[#050816]">
-                  <Cloud className="w-6 h-6 text-indigo-400" />
-                </div>
-              </div>
-
-              <span className="text-xl font-bold tracking-tight">
-                AWS <span className="text-indigo-400">Cloud Club MUJ</span>
+          <div>
+            <Link to="/" className="flex items-center gap-2 mb-4">
+              <Cloud className="w-5 h-5 text-[#FF9900]" />
+              <span className="font-medium">
+                AWS <span className="text-[#FF9900]">Cloud Club MUJ</span>
               </span>
             </Link>
 
-            <p className="text-gray-400 max-w-md leading-relaxed">
-              Empowering students to build the future with AWS Cloud technologies.
-              Join our community to learn, build, and grow together.
+            <p className="text-sm text-gray-400 leading-relaxed max-w-sm">
+              Empowering students to learn, build, and grow with AWS cloud technologies.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-bold mb-6">Quick Links</h4>
-            <ul className="space-y-4 text-gray-400">
-              <li>
-                <a href="/" className="hover:text-indigo-400 transition-colors">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="hover:text-indigo-400 transition-colors">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#events" className="hover:text-indigo-400 transition-colors">
-                  Events
-                </a>
-              </li>
-            </ul>
+            <h4 className="text-sm font-medium text-gray-300 mb-4">Quick Links</h4>
+
+            <div className="flex flex-col gap-3 text-sm text-gray-400">
+              <a href="/" className="hover:text-[#FF9900] transition-colors">
+                Home
+              </a>
+              <a href="#about" className="hover:text-[#FF9900] transition-colors">
+                About
+              </a>
+              <a href="#events" className="hover:text-[#FF9900] transition-colors">
+                Events
+              </a>
+            </div>
           </div>
 
           {/* Socials */}
           <div>
-            <h4 className="text-white font-bold mb-6">Follow Us</h4>
+            <h4 className="text-sm font-medium text-gray-300 mb-4">Connect</h4>
 
-            <div className="flex space-x-4">
+            <div className="flex gap-3">
 
-              {/* Instagram */}
               <a
                 href="https://www.instagram.com/awscloudclub_muj/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-xl bg-white/5 hover:bg-gradient-to-r from-pink-500 via-purple-500 to-orange-400 border border-white/10 hover:border-pink-400/40 transition-all"
+                className="p-2 rounded-md bg-[#161b22] border border-white/10 hover:border-[#FF9900] transition"
               >
-                <Instagram className="w-5 h-5 text-gray-300 hover:text-white" />
+                <Instagram className="w-4 h-4 text-gray-300" />
               </a>
 
-              {/* LinkedIn */}
               <a
                 href="https://www.linkedin.com/company/aws-cloud-club-muj/posts/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-xl bg-white/5 hover:bg-blue-500/20 border border-white/10 hover:border-blue-400/40 transition-all"
+                className="p-2 rounded-md bg-[#161b22] border border-white/10 hover:border-[#FF9900] transition"
               >
-                <Linkedin className="w-5 h-5 text-gray-300 hover:text-blue-400" />
+                <Linkedin className="w-4 h-4 text-gray-300" />
               </a>
 
             </div>
@@ -92,9 +71,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-          <p>© 2026 AWS Cloud Club. All rights reserved.</p>
-          <p className="mt-4 md:mt-0">Built with ❤️ by AWS Cloud Club - MUJ Team</p>
+        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+          <p>© 2026 AWS Cloud Club MUJ</p>
+          <p className="mt-2 md:mt-0">Built with ♥️ by AWS Cloud Club Team - MUJ</p>
         </div>
 
       </div>
