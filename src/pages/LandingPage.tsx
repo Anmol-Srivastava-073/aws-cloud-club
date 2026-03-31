@@ -16,9 +16,13 @@ export default function LandingPage() {
       <section className="py-16 border-b border-white/10">
         <div className="max-w-5xl mx-auto px-4 text-center">
 
-          <h1 className="text-3xl md:text-5xl font-semibold mb-5 tracking-tight leading-tight">
-            <span className="text-[#FF9900]">AWS Cloud Club - MUJ</span>
-          </h1>
+          <h1 className="text-3xl md:text-5xl font-semibold mb-5 tracking-tight leading-tight relative inline-block">
+  <span className="text-[#FF9900]">
+    AWS CLOUD CLUB MUJ
+  </span>
+
+  <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#FF9900]/40 rounded" />
+</h1>
 
           <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
             A student-led community at Manipal University Jaipur focused on learning, building,
