@@ -76,7 +76,7 @@ export default function Footer() {
           <p>© 2026 AWS Cloud Club MUJ</p>
 
           <p className="mt-2 md:mt-0">
-            Built with <span className="text-gray-400">♥</span> by AWS Cloud Club Team
+            Built with <span className="text-gray-400">♥</span> by AWS Cloud Club Team - MUJ
           </p>
 
         </div>
