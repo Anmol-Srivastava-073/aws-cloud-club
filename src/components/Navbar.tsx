@@ -6,28 +6,23 @@ import { motion, AnimatePresence } from 'motion/react';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Events', path: '#events' },
-  ];
-
   const handleHomeClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0b0f14] border-b border-white/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0b0f14]/95 backdrop-blur border-b border-white/10">
 
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-5xl mx-auto px-4">
+        <div className="flex items-center justify-between h-14">
 
           {/* Logo */}
           <Link
             to="/"
             onClick={handleHomeClick}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 group"
           >
-            <Cloud className="w-5 h-5 text-[#FF9900]" />
+            <Cloud className="w-4.5 h-4.5 text-[#FF9900]/90" />
 
             <span className="text-sm font-medium tracking-tight">
               AWS <span className="text-[#FF9900]">Cloud Club MUJ</span>
@@ -35,7 +30,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-6 text-sm">
+          <div className="hidden md:flex items-center gap-5 text-xs">
 
             <Link
               to="/"
@@ -57,9 +52,9 @@ export default function Navbar() {
           {/* Mobile Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-gray-400 hover:text-white transition"
+            className="md:hidden p-1.5 rounded border border-transparent hover:border-white/10 text-gray-400 hover:text-white transition"
           >
-            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {isOpen ? <X className="w-4.5 h-4.5" /> : <Menu className="w-4.5 h-4.5" />}
           </button>
 
         </div>
@@ -69,12 +64,13 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.15 }}
             className="md:hidden border-t border-white/10 bg-[#0b0f14]"
           >
-            <div className="px-4 py-4 flex flex-col gap-4 text-sm">
+            <div className="px-4 py-3 flex flex-col gap-3 text-sm">
 
               <Link
                 to="/"
@@ -82,7 +78,7 @@ export default function Navbar() {
                   setIsOpen(false);
                   handleHomeClick();
                 }}
-                className="text-gray-400 hover:text-white transition"
+                className="text-gray-400 hover:text-white transition-colors"
               >
                 Home
               </Link>
@@ -90,7 +86,7 @@ export default function Navbar() {
               <a
                 href="#events"
                 onClick={() => setIsOpen(false)}
-                className="text-gray-400 hover:text-white transition"
+                className="text-gray-400 hover:text-white transition-colors"
               >
                 Events
               </a>
