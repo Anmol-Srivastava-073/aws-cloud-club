@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
-/* 🎨 AWS THEME */
+/* 🎨 AWS-INSPIRED THEME (REFINED) */
 @theme {
   --color-aws-orange: #FF9900;
   --color-aws-bg: #0b0f14;
   --color-aws-surface: #161b22;
+  --color-aws-surface-hover: #1c2128;
   --color-aws-border: rgba(255,255,255,0.08);
 
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -20,10 +21,15 @@ body {
   @apply font-sans antialiased bg-[#0b0f14];
 }
 
-/* 📦 CARD (AWS STYLE) */
+/* ✨ TYPOGRAPHY TWEAKS */
+h1, h2, h3 {
+  letter-spacing: -0.01em;
+}
+
+/* 📦 CARD (SUBTLE DEPTH) */
 .aws-card {
-  @apply bg-[#161b22] border border-white/10 rounded-lg 
-  shadow-sm transition-all duration-200;
+  @apply bg-[#161b22] border border-white/10 rounded-md 
+  transition-all duration-200;
 }
 
 .aws-card:hover {
@@ -35,7 +41,7 @@ body {
   @apply px-5 py-2.5 rounded-md font-medium transition-all duration-200;
 }
 
-/* 🔥 PRIMARY BUTTON (AWS ORANGE) */
+/* 🔥 PRIMARY BUTTON */
 .aws-button-primary {
   @apply px-5 py-2.5 rounded-md font-medium text-black;
   background-color: #FF9900;
@@ -73,4 +79,14 @@ a {
 /* ✨ SCROLL */
 html {
   scroll-behavior: smooth;
+}
+
+/* 🧠 HUMAN TOUCH: subtle divider utility */
+.aws-divider {
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* 🧠 HUMAN TOUCH: section spacing */
+.aws-section {
+  @apply py-20;
 }
