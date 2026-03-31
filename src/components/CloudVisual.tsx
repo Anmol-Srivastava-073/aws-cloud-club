@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const awsIcons = [
   "ec2","lambda","s3","rds","dynamodb","apigateway","cloudfront",
   "vpc","sqs","sns","cloudwatch","ecs","eks","route53","iam",
-  "elasticloadbalancing","efs","elasticache"
+  "elasticloadbalancing","efs","elasticache","aww"
 ].map(name => `/aws/${name}.svg`);
 
 export default function CloudVisual() {
