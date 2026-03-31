@@ -25,8 +25,8 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* CENTER - NAV LINKS (NOW ALWAYS VISIBLE) */}
-          <div className="flex items-center gap-6 text-sm">
+          {/* 🔥 CENTER NAV (DESKTOP ONLY) */}
+          <div className="hidden md:flex items-center gap-6 text-sm">
 
             <Link
               to="/"
